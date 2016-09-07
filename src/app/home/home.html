@@ -1,2 +1,9 @@
-<h3>Home Component</h3>
-<p>Welcome to Angular Seed</p>
+<div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <div class="field">
+      <label for="taskInput">New task:</label>
+      <input type="text" id="taskInput" placeholder="your task" [formControl]="myForm.controls['task']">
+    </div>
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>

@@ -1,4 +1,9 @@
 import {Component} from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  AbstractControl
+} from '@angular/forms';
 
 @Component({
   selector: 'home',
@@ -6,4 +11,16 @@ import {Component} from '@angular/core';
   templateUrl: './home.html'
 })
 export class Home {
+  myForm: FormGroup;
+  task: AbstractControl;
+  constructor(fb: FormBuilder) {
+    this.myForm = fb.group({
+      'task': ['ABC123']
+    });
+    this.task = this.myForm.controls['task'];
+  }
+
+  onSubmit(form: any): void {
+    console.log('you submitted value:', form);
+  }
 }
