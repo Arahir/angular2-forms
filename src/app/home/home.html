@@ -3,7 +3,12 @@
     <div class="field">
       <label for="taskInput">New task:</label>
       <input type="text" id="taskInput" placeholder="your task" [formControl]="myForm.controls['task']">
+      <select [formControl]="myForm.controls['type']" id="typeInput">
+        <option value="todo">To do</option>
+        <option value="done">Done</option>
+        <option value="doing">Doing</option>
+      </select>
     </div>
-    <button type="submit" class="ui button">Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </div>

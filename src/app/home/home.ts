@@ -15,7 +15,8 @@ export class Home {
   task: AbstractControl;
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'task': ['ABC123']
+      'task': ['ABC123'],
+      'type': ['doing']
     });
     this.task = this.myForm.controls['task'];
   }
